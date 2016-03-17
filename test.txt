@@ -1,0 +1,3 @@
+https://api.twitter.com/oauth/authorize?oauth_token=8h179AAAAAAAuMB8AAABU4YSyQg
+Verifier:710537701221654528-qBnpcyvwucSiw5qIOoMJwF4RS2jK4z8
+aztUPGLZIRz49qnB19cz9Gj2nvrAXwUJJytzqjW12elDB

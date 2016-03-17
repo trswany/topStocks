@@ -5,6 +5,7 @@ import tweetPoster
 
 def main():
     """ Max, call your library and set 'tweetText' to the text you want to post """
+    tweetText = "testTweet"
     tweetPoster.postTweet(tweetText)
     pass
 
