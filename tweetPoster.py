@@ -14,13 +14,16 @@ def getAccessTokens():
     except:
         print "Error! Could not find consumer key or consumer secret"
 
+    if consumerKey == '' or consumerSecret == '':
+        print "Error! Consumer keys are blank. Add them to config.ini."
+
     auth = tweepy.OAuthHandler(consumerKey, consumerSecret)
     try:
         redirect_url = auth.get_authorization_url()
         print redirect_url
         webbrowser.open(redirect_url)
     except tweepy.TweepError:
-        print 'Error! Failed to get request token.'
+        print 'Error! Failed getting request token from Twitter.'
 
     verifier = raw_input('Verifier PIN:')
 
