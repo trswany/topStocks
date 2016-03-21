@@ -16,15 +16,16 @@ def fetchNASDAQfile():
 # Reads the NASDAQ file, parses it, and returns a list of all stock symbols
 def parseNASDAQfile():
     print "Parsing NASDAQ file..."
-
+    list = []
     # Open the file and grab the first column
     with open('nasdaqlisted.txt', 'rb') as csvfile:
         symbolReader = csv.reader(csvfile, delimiter='|', quotechar='"')
-        #for row in symbolReader:
-            #print row[0]
-
+        for row in symbolReader:
+            list = list + [row[0]]
     print("Done parsing NASDAQ file.")
-    return ['GOOG', 'TWIN', 'UCTT']
+    del list[0]
+    del list [-1]
+    return list
 
 # Returns a list of all stock symbols
 def getStockList():
