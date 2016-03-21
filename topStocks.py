@@ -1,12 +1,16 @@
 """Find top stocks and post them to Twitter."""
 import sys
 import tweetPoster
+import stockPrices
 from stockList import getStockList
-""" Max, import your library here """
 
 def main():
     currentStockList = getStockList()
-    """ Max, call your library and set 'tweetText' to the text you want to post """
+    currentStockPrices = dict()
+	oldStockPrices = currentStockPrices
+	currentStockPrices = stockPrices.getStockPrices(currentStockList)
+    print currentStockPrices
+	topStockPrices = stockPrices.getFastestChangingPrices(currentStockPrices, oldStockPrices)
     tweetText = "testTweet"
     #tweetPoster.postTweet(tweetText)
     pass
