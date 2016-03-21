@@ -23,6 +23,8 @@ def parseNASDAQfile():
         for row in symbolReader:
             list = list + [row[0]]
     print("Done parsing NASDAQ file.")
+    del list[0]
+    del list [-1]
     return list
 
 # Returns a list of all stock symbols
