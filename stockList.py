@@ -20,10 +20,11 @@ def parseNASDAQfile():
     # Open the file and grab the first column
     with open('nasdaqlisted.txt', 'rb') as csvfile:
         symbolReader = csv.reader(csvfile, delimiter='|', quotechar='"')
-        for row in symbolReader:
-            print row[0]
+        #for row in symbolReader:
+            #print row[0]
 
     print("Done parsing NASDAQ file.")
+    return ['GOOG', 'TWIN', 'UCTT']
 
 # Returns a list of all stock symbols
 def getStockList():
