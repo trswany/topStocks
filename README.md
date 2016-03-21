@@ -1,6 +1,6 @@
 # Project Name
 
-TODO: Write a project description
+Find top stocks and post them to Twitter.
 
 ## Installation
 
@@ -21,6 +21,10 @@ TODO: Write usage instructions
 ## History
 
 TODO: Write history
+
+## Notes
+The NASDAQ maintains an FTP server of useful data at ftp://ftp.nasdaqtrader.com/
+We use the nasdaqlisted.txt file from their SymbolDirectory/ folder. Information about this folder is available here: http://www.nasdaqtrader.com/trader.aspx?id=symboldirdefs
 
 ## Credits
 
