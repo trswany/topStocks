@@ -22,7 +22,15 @@ def main():
 
     # Find the fastest-changing stocks
     topStockPrices = stockPrices.getFastestChangingPrices(currentStockPrices, oldStockPrices)
-    tweetText = str(topStockPrices)
+
+    # Format the tweet text
+    tweetText = ""
+    for stockPrice in topStockPrices:
+        symbol  = stockPrice[0]
+        percentage = round(float(stockPrice[1]), 2)
+        if percentage > 0:
+            percentage = '+' + str(percentage)
+        tweetText = tweetText + '#' + symbol + " : " + percentage + '%, '
 
     # Post a tweet of the top stocks
     print tweetText
