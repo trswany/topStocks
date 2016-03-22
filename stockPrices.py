@@ -4,10 +4,12 @@ import operator
 
 def getStockPrices(stocks):
 	#stocks must be an array of stock symbol strings
-	
+
 	# Refresh stock prices
-	[Share(symbol).refresh() for symbol in stocks]
-	
+	for symbol in stocks:
+		print(symbol)
+		Share(symbol).refresh()
+
 	# Return list of new prices
 	return dict(zip(stocks,[Share(symbol).get_price() for symbol in stocks]))
 
@@ -20,6 +22,6 @@ def getFastestChangingPrices(oldstockprices,newstockprices):
 			pdiff[sym] = str((float(newstockprices[sym])-float(oldstockprices[sym]))/float(oldstockprices[sym])*100)
 		except:
 			pdiff[sym] = 0;
-	  
+
 	pdiff = sorted(pdiff.items(), key=operator.itemgetter(1), reverse=True)
 	return pdiff[:4]
