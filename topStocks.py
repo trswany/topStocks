@@ -30,6 +30,8 @@ def main():
         percentage = round(float(stockPrice[1]), 2)
         if percentage > 0:
             percentage = '+' + str(percentage)
+        else:
+            percentage = str(percentage)
         tweetText = tweetText + '#' + symbol + " : " + percentage + '%, '
 
     # Post a tweet of the top stocks
