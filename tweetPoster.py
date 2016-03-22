@@ -83,6 +83,6 @@ def postTweet(tweetText):
 
     # Post the Tweet
     try:
-        api.update_status('tweetText')
+        api.update_status(tweetText)
     except tweepy.TweepError:
         print 'Error! Failed to post status update.'
