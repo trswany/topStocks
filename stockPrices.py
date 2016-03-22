@@ -17,7 +17,10 @@ def getFastestChangingPrices(oldstockprices,newstockprices):
   pdiff = dict()
   ptop = dict()
   for sym in newstockprices:
-    pdiff[sym] = str((float(newstockprices[sym])-float(oldstockprices[sym]))/float(oldstockprices[sym])*100)
-  
+    try:
+	  pdiff[sym] = str((float(newstockprices[sym])-float(oldstockprices[sym]))/float(oldstockprices[sym])*100)
+	except:
+	  pdiff[sym] = 0;
+	  
   pdiff = sorted(pdiff.items(), key=operator.itemgetter(1), reverse=True)
   return pdiff[:4]
